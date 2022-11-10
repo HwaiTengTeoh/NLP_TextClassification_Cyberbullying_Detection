@@ -1,7 +1,7 @@
 bs4
 wget
 textblob
-re
+regex
 string
 pickle
 pip
