@@ -1,5 +1,6 @@
 pip
-git+https://github.com/HwaiTengTeoh/language_check.git
+git+https://github.com/HwaiTengTeoh/preprocess_text.git
+git+https://github.com/HwaiTengTeoh/language_tool_python.git
 pyemd
 numpy
 pandas
@@ -7,8 +8,6 @@ spacy
 nltk
 emot
 fuzzywuzzy
-git+https://github.com/HwaiTengTeoh/preprocess_text.git
-language_tool_python
 pycontractions
 streamlit
 pandas
