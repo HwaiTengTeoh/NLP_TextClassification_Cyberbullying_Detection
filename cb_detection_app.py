@@ -11,7 +11,7 @@ import pandas as pd
 pd.set_option('display.max_columns', None)
 
 # Progress bar
-import datetime, warnings, scipy
+import datetime, warnings
 warnings.filterwarnings("ignore")
 from tqdm._tqdm_notebook import tqdm_notebook
 tqdm_notebook.pandas()
