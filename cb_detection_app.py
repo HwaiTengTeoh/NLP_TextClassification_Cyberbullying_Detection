@@ -11,8 +11,9 @@ import pandas as pd
 pd.set_option('display.max_columns', None)
 
 # Progress bar
+import datetime, warnings, scipy
+warnings.filterwarnings("ignore")
 from tqdm._tqdm_notebook import tqdm_notebook
-from tqdm import tqdm
 tqdm_notebook.pandas()
 
 # Text Cleaning & Normalization
