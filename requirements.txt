@@ -1,5 +1,4 @@
 pip
-git+https://github.com/MCFreddie777/language-check.git
 git+https://github.com/HwaiTengTeoh/preprocess_text.git
 git+https://github.com/HwaiTengTeoh/language_tool_python.git
 pyemd
