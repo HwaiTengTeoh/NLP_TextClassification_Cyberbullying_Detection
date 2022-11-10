@@ -128,9 +128,9 @@ example_text = "I'd not hate you"
 example_data = {
     "text" : [example_text]
 }
-bully_data = pd.DataFrame(example_data)
+df = pd.DataFrame(example_data)
 
-def text_preprocessing_pipeline(df=bully_data,
+def text_preprocessing_pipeline(df=df,
                                 remove_url=False,
                                 remove_email=False,
                                 remove_user_mention=False,
