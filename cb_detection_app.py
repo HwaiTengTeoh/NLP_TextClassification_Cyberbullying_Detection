@@ -17,13 +17,10 @@ pd.set_option('display.max_columns', None)
 # Text Cleaning & Normalization
 import re
 import pickle
-import spacy
 import nltk
 from emot.emo_unicode import UNICODE_EMOJI, EMOTICONS_EMO
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-
-nlp = spacy.load("en_core_web_sm")
 
 import preprocess_text as pt
 import language_tool_python
