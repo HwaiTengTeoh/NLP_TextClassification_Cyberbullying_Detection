@@ -281,8 +281,8 @@ def text_preprocessing_pipeline(df=bully_data,
     df = df[~df['text_check'].isna()]
     df = df[df['text_check'] != '']
     df = df.reset_index(drop=True)
-    
-    return df['text_check'].tolist()[0]
+    clean_df = df['text_check'].tolist()[0]
+    return clean_df
 
 
 ###################################################################################
