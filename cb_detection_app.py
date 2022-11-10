@@ -249,7 +249,7 @@ def text_preprocessing_pipeline(df=df,
     if normalize_contraction:
         print('Text Preprocessing: Contraction to Expansion')
         # df['text_check'] = df['text_check'].apply(lambda x: ''.join(list(cont.expand_texts([x], precise=True))))
-        df['text_check'] = df['text_check'].apply(lambda x: contractions.fix(x))
+        df['text_check'] = df['text_check'].apply(lambda x: contractions.fix(x,slang=False))
     
     if remove_numeric: 
         print('Text Preprocessing: Remove numeric')
