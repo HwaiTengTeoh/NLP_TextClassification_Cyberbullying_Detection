@@ -2,7 +2,6 @@ bs4
 wget
 textblob
 regex
-pickle
 pip
 git+https://github.com/HwaiTengTeoh/preprocess_text.git
 git+https://github.com/HwaiTengTeoh/language_tool_python.git
