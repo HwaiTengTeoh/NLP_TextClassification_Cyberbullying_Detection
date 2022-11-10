@@ -1,8 +1,6 @@
 pip
 numpy
 pandas
-re
-pickle
 spacy
 nltk
 emot
