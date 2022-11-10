@@ -1,0 +1,17 @@
+datetime
+warnings
+numpy
+pandas
+re
+pickle
+spacy
+nltk
+emot
+fuzzywuzzy
+preprocess_text
+language_tool_python
+pycontractions
+streamlit
+pandas
+torch
+transformers
