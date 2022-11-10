@@ -9,7 +9,6 @@ nltk
 emot
 fuzzywuzzy
 pycontractions
-git+https://github.com/myint/language-check.git
 streamlit
 pandas
 torch
