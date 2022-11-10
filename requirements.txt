@@ -8,7 +8,6 @@ spacy
 nltk
 emot
 fuzzywuzzy
-pycontractions
 streamlit
 pandas
 torch
