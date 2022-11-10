@@ -5,7 +5,7 @@ spacy
 nltk
 emot
 fuzzywuzzy
-git+ssh://git@github.com/HwaiTengTeoh/preprocess_text.git
+https://github.com/HwaiTengTeoh/preprocess_text.git
 language_tool_python
 pycontractions
 streamlit
