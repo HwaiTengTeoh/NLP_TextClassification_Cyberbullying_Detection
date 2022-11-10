@@ -281,8 +281,8 @@ def text_preprocessing_pipeline(df=df,
     df = df[~df['text_check'].isna()]
     df = df[df['text_check'] != '']
     df = df.reset_index(drop=True)
-    clean_df = df['text_check'].tolist()[0]
-    return clean_df
+    
+    return df['text_check'].tolist()
 
 
 ###################################################################################
@@ -375,7 +375,7 @@ cleaned_input_text = text_preprocessing_pipeline(
 #######################
 
 if input_text and button:
-    input_text_tokenized = tokenizer([cleaned_input_text], padding=True, truncation=True, max_length=512)
+    input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
     
     # Create torch dataset
     input_text_dataset = Dataset(input_text_tokenized)
