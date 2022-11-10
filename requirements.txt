@@ -1,4 +1,6 @@
 pip
+git+https://github.com/HwaiTengTeoh/language_check.git
+pyemd
 numpy
 pandas
 spacy
@@ -8,7 +10,6 @@ fuzzywuzzy
 git+https://github.com/HwaiTengTeoh/preprocess_text.git
 language_tool_python
 pycontractions
-git+https://github.com/HwaiTengTeoh/language_check.git
 streamlit
 pandas
 torch
