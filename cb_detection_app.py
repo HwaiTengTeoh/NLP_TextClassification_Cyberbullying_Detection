@@ -124,7 +124,11 @@ term_badword_list = get_term_list("Data Files/Term Lists/compiled_badword.txt")
 ###############################
 # Text Preprocessing Pipeline #
 ###############################
-bully_data = pd.DataFrame(["example text"],columns=['text'])
+example_text = "I'd not hate you"
+example_data = {
+    "text" : [example_text]
+}
+bully_data = pd.DataFrame(example_data)
 
 def text_preprocessing_pipeline(df=bully_data,
                                 remove_url=False,
