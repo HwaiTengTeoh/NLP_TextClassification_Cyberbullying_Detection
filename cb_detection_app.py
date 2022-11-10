@@ -17,7 +17,6 @@ pd.set_option('display.max_columns', None)
 # Text Cleaning & Normalization
 import re
 import pickle
-import nltk
 from emot.emo_unicode import UNICODE_EMOJI, EMOTICONS_EMO
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
