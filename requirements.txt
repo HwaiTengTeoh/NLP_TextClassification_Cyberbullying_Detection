@@ -1,4 +1,12 @@
 bs4
+wget
+os
+sys
+unicodedata
+textblob
+re
+string
+pickle
 pip
 git+https://github.com/HwaiTengTeoh/preprocess_text.git
 git+https://github.com/HwaiTengTeoh/language_tool_python.git
