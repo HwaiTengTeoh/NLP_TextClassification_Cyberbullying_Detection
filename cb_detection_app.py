@@ -25,11 +25,12 @@ from fuzzywuzzy import process
 
 import preprocess_text as pt
 import language_tool_python
-from pycontractions.contractions import Contractions
+# from pycontractions.contractions import Contractions
+import contractions
 
 # Instantiate
 tool = language_tool_python.LanguageTool('en-US')
-cont = Contractions(api_key="glove-twitter-100")
+# cont = Contractions(api_key="glove-twitter-100")
 
 # Functions
 def get_term_list(path):
@@ -243,7 +244,8 @@ def text_preprocessing_pipeline(df=bully_data,
         
     if normalize_contraction:
         print('Text Preprocessing: Contraction to Expansion')
-        df['text_check'] = df['text_check'].apply(lambda x: ''.join(list(cont.expand_texts([x], precise=True))))
+        # df['text_check'] = df['text_check'].apply(lambda x: ''.join(list(cont.expand_texts([x], precise=True))))
+        df['text_check'] = df['text_check'].apply(lambda x: contractions.fix(x))
     
     if remove_numeric: 
         print('Text Preprocessing: Remove numeric')
