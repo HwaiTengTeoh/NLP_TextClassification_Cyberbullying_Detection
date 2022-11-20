@@ -68,6 +68,7 @@ if selected =="Contact":
   
 
 if selected == "Application":   
+    st.title("Cyberbullying Detection Application")
     ################################################################
     # Note: [Part 1] This part is to execute preprocess input text #
     ################################################################
@@ -75,7 +76,6 @@ if selected == "Application":
     # Instantiate
     tool = language_tool_python.LanguageTool('en-US')
     # cont = Contractions(api_key="glove-twitter-100")  
-    
     
     # Functions
     def get_term_list(path):
