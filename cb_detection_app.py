@@ -38,7 +38,7 @@ from streamlit_option_menu import option_menu
 
 selected = option_menu(
     menu_title=None,
-    options = ["Home", "Application", "Other Resources","Contact"],
+    options = ["Home", "Application", "Resources","Contacts"],
     icons = ["house","card-text","file-earmark-code","envelope"],
     default_index=0,
     orientation="horizontal",
@@ -68,13 +68,13 @@ if selected =="Home":
             ---
             """)
 
-if selected == "Other Resources":
+if selected == "Resources":
     st.markdown("""
                 ***Here's the link to the Github Repository:****
                 > https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
     """)
     
-if selected =="Contact":
+if selected =="Contacts":
     st.title("Contacts")
     st.markdown("""
                 #### Teoh Hwai Teng
