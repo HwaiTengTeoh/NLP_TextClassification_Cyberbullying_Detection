@@ -58,7 +58,7 @@ if selected =="Contact":
                 
                 ")
     st.markdown("")
-    st.mar
+
     
     
   
