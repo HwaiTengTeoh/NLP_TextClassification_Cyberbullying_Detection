@@ -72,11 +72,11 @@ if selected == "Resources":
     st.title("Resources")
     st.markdown("""
                 ---
-                ***You may check out the source codes. Here's the link to the Github Repository:***
-                > https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
+                ***You may check out the source codes.***
+                >  Here's the [link](https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection) to the Github Repository 
                 ---
-                ***You may download the model too. Here's the link to the HuggingFace Repository:***
-                > https://huggingface.co/teoh0821/cb_detection
+                ***You may download the model too.***
+                > Here's the [link](https://huggingface.co/teoh0821/cb_detection) to the HuggingFace Repository
                 ---
     """)
     
