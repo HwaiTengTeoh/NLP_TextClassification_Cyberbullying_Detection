@@ -37,7 +37,7 @@ from streamlit_option_menu import option_menu
 
 selected = option_menu(
     menu_title=None,
-    options = ["Home", "Application", "Contact"],
+    options = ["Home", "Application", "Source Code","Contact"],
     icons = ["house","card-text","envelope"],
     default_index=0,
     orientation="horizontal",
@@ -45,6 +45,12 @@ selected = option_menu(
 
 if selected =="Home":
     st.title("home page is selected")
+if selected == "Source Code":
+
+    st.markdown("""
+                ***Here's the link to the Github Repository:****
+                > https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
+    """)
 if selected =="Contact":
     st.title("Contacts")
     st.markdown("""
@@ -53,7 +59,7 @@ if selected =="Contact":
                 
                 > Email: teoh0821@gmail.com
                 
-                > Github: https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
+                > Github: https://github.com/HwaiTengTeoh
                 
                 ---
                 #### Associate Prof Dr. Kasturi Dewi A/P Varathan
