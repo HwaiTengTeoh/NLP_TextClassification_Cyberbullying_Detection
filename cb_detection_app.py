@@ -69,8 +69,9 @@ if selected =="Home":
             """)
 
 if selected == "Resources":
+    st.title("Resources")
     st.markdown("""
-                #### Resources
+
                 ---
                 ***You may check out the source codes. Here's the link to the Github Repository:***
                 > https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
