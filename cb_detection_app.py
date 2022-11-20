@@ -70,11 +70,12 @@ if selected =="Home":
 
 if selected == "Resources":
     st.markdown("""
+                #### Resources
                 ---
-                ***You may check out the source codes. Here's the link to the Github Repository:****
+                ***You may check out the source codes. Here's the link to the Github Repository:***
                 > https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
                 ---
-                ***You may download the model too. Here's the link to the HuggingFace Repository:****
+                ***You may download the model too. Here's the link to the HuggingFace Repository:***
                 > https://huggingface.co/teoh0821/cb_detection
                 ---
     """)
