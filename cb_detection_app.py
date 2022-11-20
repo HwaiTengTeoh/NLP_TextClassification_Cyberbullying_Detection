@@ -300,7 +300,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import Trainer
 
-
+st.info("Loading..")
 
 ####################################
 # Call model from Hugging Face Hub #
