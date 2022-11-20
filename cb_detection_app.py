@@ -302,6 +302,18 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import Trainer
 
 
+selected = option_menu(
+    menu_title="Main Menu",
+    options = ["Home", "Application", "Contact"],
+    icons = ["house","card-text","envelope"],
+    default_index=0,
+    orientation="horizontal",
+    )
+
+if selected =="Home":
+    st.title("home page is selected")
+if selected =="Contact":
+    st.title("contact is selected")
 ####################################
 # Call model from Hugging Face Hub #
 ####################################
@@ -332,72 +344,73 @@ class Dataset(torch.utils.data.Dataset):
 
     def __len__(self):
         return len(self.encodings["input_ids"])
-    
 
 ##################################################################
 # Note: [Part 3] Run the application for cyberbullying detection #
 ##################################################################
-tokenizer, model = get_cb_model()
+if selected == "Application":
 
-input_text = st.text_area('Enter Text to Analyze')
-button = st.button("Analyze")
+    tokenizer, model = get_cb_model()
+
+    input_text = st.text_area('Enter Text to Analyze')
+    button = st.button("Analyze")
 
 
-#######################
-# Streamlit Interface #
-#######################
+    #######################
+    # Streamlit Interface #
+    #######################
 
-if input_text and button:
-    
-    # Read data 
-    input_data = {
-                    "text" : [input_text] 
-                }
+    if input_text and button:
 
-    bully_data = pd.DataFrame(input_data)
+        # Read data 
+        input_data = {
+                        "text" : [input_text] 
+                    }
 
-    with st.spinner("Hold on.. Preprocessing the input text.."):
-        cleaned_input_text = text_preprocessing_pipeline(
-                                            df=bully_data,
-                                            remove_url=True,
-                                            remove_email=True,
-                                            remove_user_mention=True,
-                                            remove_html=False,
-                                            remove_space_single_char=True,
-                                            normalize_elongated_char=True,
-                                            normalize_emoji=True,
-                                            normalize_emoticon=True,
-                                            normalize_accented=True,
-                                            lower_case=True,
-                                            normalize_slang=True,
-                                            normalize_badterm=True,
-                                            spelling_check=True,
-                                            normalize_contraction=True,
-                                            remove_numeric=True,
-                                            remove_stopword=False, # Keep stopwords
-                                            keep_pronoun=False,  # Keep pronoun
-                                            remove_punctuation=True,
-                                            lemmatise=True)
+        bully_data = pd.DataFrame(input_data)
 
-    with st.spinner("Almost there.. Analyzing your input text.."):
-        time.sleep(1)
+        with st.spinner("Hold on.. Preprocessing the input text.."):
+            cleaned_input_text = text_preprocessing_pipeline(
+                                                df=bully_data,
+                                                remove_url=True,
+                                                remove_email=True,
+                                                remove_user_mention=True,
+                                                remove_html=False,
+                                                remove_space_single_char=True,
+                                                normalize_elongated_char=True,
+                                                normalize_emoji=True,
+                                                normalize_emoticon=True,
+                                                normalize_accented=True,
+                                                lower_case=True,
+                                                normalize_slang=True,
+                                                normalize_badterm=True,
+                                                spelling_check=True,
+                                                normalize_contraction=True,
+                                                remove_numeric=True,
+                                                remove_stopword=False, # Keep stopwords
+                                                keep_pronoun=False,  # Keep pronoun
+                                                remove_punctuation=True,
+                                                lemmatise=True)
 
-    input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
+        with st.spinner("Almost there.. Analyzing your input text.."):
+            time.sleep(1)
 
-    # Create torch dataset
-    input_text_dataset = Dataset(input_text_tokenized)
+        input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
 
-    # Define test trainer
-    pred_trainer = Trainer(model)
+        # Create torch dataset
+        input_text_dataset = Dataset(input_text_tokenized)
 
-    # Make prediction
-    raw_pred, _, _ = pred_trainer.predict(input_text_dataset)
+        # Define test trainer
+        pred_trainer = Trainer(model)
 
-    # Preprocess raw predictions
-    text_pred = np.where(np.argmax(raw_pred, axis=1)==1,"Cyberbullying Post","Non-cyberbullying Post")
-    
-    if text_pred.tolist()[0] == "Non-cyberbullying Post":
-        st.success("No worry! Our model says this is a Non-cyberbullying Post!", icon="✅")
-    elif text_pred.tolist()[0] == "Cyberbullying Post":
-        st.warning("Warning!! Our model says this is a Cyberbullying Post!", icon="⚠️")
-    #st.write("Our model says this is a ", text_pred.tolist()[0])
+        # Make prediction
+        raw_pred, _, _ = pred_trainer.predict(input_text_dataset)
+
+        # Preprocess raw predictions
+        text_pred = np.where(np.argmax(raw_pred, axis=1)==1,"Cyberbullying Post","Non-cyberbullying Post")
+
+        if text_pred.tolist()[0] == "Non-cyberbullying Post":
+            st.success("No worry! Our model says this is a Non-cyberbullying Post!", icon="✅")
+        elif text_pred.tolist()[0] == "Cyberbullying Post":
+            st.warning("Warning!! Our model says this is a Cyberbullying Post!", icon="⚠️")
+        #st.write("Our model says this is a ", text_pred.tolist()[0])
