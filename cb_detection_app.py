@@ -37,20 +37,31 @@ from streamlit_option_menu import option_menu
 
 selected = option_menu(
     menu_title=None,
-    options = ["Home", "Application", "Source Code","Contact"],
-    icons = ["house","card-text","envelope"],
+    options = ["Home", "Application", "Other Resources","Contact"],
+    icons = ["house","card-text","file-earmark-code","envelope"],
     default_index=0,
     orientation="horizontal",
     )
 
 if selected =="Home":
-    st.title("home page is selected")
-if selected == "Source Code":
+    st.title("Welcome to the Cyberbullying Detection Application!")
+    st.markdown("""
+                Cyberbullying sabotages the environment of Online Social Media. 
+                
+                A detection application is mandatory to prevent anyone from making Online Social Media a playground for them to commit cyberbullying. 
+                
+                At the same time, preventing someone from suffering victimization is more than crucial. 
+                
+                This application was developed to put an end to cyberbullying posts. 
+                
+                """)
 
+if selected == "Other Resources":
     st.markdown("""
                 ***Here's the link to the Github Repository:****
                 > https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
     """)
+    
 if selected =="Contact":
     st.title("Contacts")
     st.markdown("""
@@ -74,7 +85,12 @@ if selected =="Contact":
   
 
 if selected == "Application":   
-    st.title("Cyberbullying Detection Application")
+    st.title("Try out the application!")
+    st.markdown("""
+                #### It’s simple to kick start!
+                ##### Just input your text or paste any post that you spotted online. 
+                ##### Our model will analyze and check the text or post for you in ***one click***. 
+        """)
     ################################################################
     # Note: [Part 1] This part is to execute preprocess input text #
     ################################################################
