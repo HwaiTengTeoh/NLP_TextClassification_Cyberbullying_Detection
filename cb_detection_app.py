@@ -419,7 +419,7 @@ if selected == "Application":
     with st.spinner("Setting up.."):
         tokenizer, model = get_cb_model()
 
-
+    st.markdown("---")
     input_text = st.text_area('Enter Text to Analyze')
     button = st.button("Analyze")
 
