@@ -57,7 +57,12 @@ if selected =="Home":
                 
                 """)
     
-
+    st.markdown("""
+                ***Credits:****
+                *The image was taken from the Slidesgo presentation template, with the icons created by Falticons and infographics and images by Freepik*
+                > URL: https://slidesgo.com/theme/international-day-against-bullying-at-school-including-cyberbullying#search-cyberbullying&position-1&results-10&rs=search
+                """)
+    
     home_image = Image.open('Picture1.png')
     st.image(home_image, caption="")
 
