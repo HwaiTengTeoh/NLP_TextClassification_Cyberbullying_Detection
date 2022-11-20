@@ -314,7 +314,9 @@ if selected == "Application":
     from transformers import AutoTokenizer, AutoModelForSequenceClassification
     from transformers import Trainer
 
-
+    import os
+    os.environ["TOKENIZERS_PARALLELISM"] = "False"
+    
     ####################################
     # Call model from Hugging Face Hub #
     ####################################
