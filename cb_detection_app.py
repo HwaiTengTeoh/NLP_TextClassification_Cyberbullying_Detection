@@ -315,7 +315,7 @@ if selected == "Application":
     from transformers import Trainer
 
     import os
-    os.environ["TOKENIZERS_PARALLELISM"] = "False"
+    os.environ["TOKENIZERS_PARALLELISM"] = "true"
     
     ####################################
     # Call model from Hugging Face Hub #
