@@ -2,9 +2,6 @@
 #############################
 # Import Libraries/ Modules #
 #############################
-
-import streamlit as st
-from streamlit_option_menu import option_menu
 import warnings
 import time
 warnings.filterwarnings("ignore")
@@ -29,10 +26,8 @@ import language_tool_python
 # from pycontractions.contractions import Contractions
 import contractions
 
-# Instantiate
-tool = language_tool_python.LanguageTool('en-US')
-# cont = Contractions(api_key="glove-twitter-100")
-
+import streamlit as st
+from streamlit_option_menu import option_menu
 
 selected = option_menu(
     menu_title=None,
@@ -51,6 +46,10 @@ if selected == "Application":
     ################################################################
     # Note: [Part 1] This part is to execute preprocess input text #
     ################################################################
+   
+    # Instantiate
+    tool = language_tool_python.LanguageTool('en-US')
+    # cont = Contractions(api_key="glove-twitter-100")
     # Functions
     def get_term_list(path):
         '''
