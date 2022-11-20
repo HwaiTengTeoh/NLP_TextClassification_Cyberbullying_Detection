@@ -303,7 +303,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import Trainer
 
 selected = option_menu(
-    menu_title="Main Menu",
+    menu_title=None,
     options = ["Home", "Application", "Contact"],
     icons = ["house","card-text","envelope"],
     default_index=0,
