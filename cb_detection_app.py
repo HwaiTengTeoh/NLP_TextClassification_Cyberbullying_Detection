@@ -57,7 +57,7 @@ if selected =="Home":
                 
                 """)
   
-    home_image = Image.open('Picture1.png')
+    home_image = Image.open('Picture2.png')
     st.image(home_image, caption="")
     
     st.markdown("""
@@ -111,7 +111,7 @@ if selected == "Application":
                 ##### Our model will analyze and check the text or post for you in ***one click***. 
         """)
     
-    app_image = Image.open('Picture2.png')
+    app_image = Image.open('Picture1.png')
     st.image(app_image, caption="")
     ################################################################
     # Note: [Part 1] This part is to execute preprocess input text #
