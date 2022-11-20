@@ -302,7 +302,6 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import Trainer
 
-
 selected = option_menu(
     menu_title="Main Menu",
     options = ["Home", "Application", "Contact"],
@@ -315,42 +314,42 @@ if selected =="Home":
     st.title("home page is selected")
 if selected =="Contact":
     st.title("contact is selected")
-####################################
-# Call model from Hugging Face Hub #
-####################################
-@st.cache(allow_output_mutation=True)
-
-def get_cb_model():
     
-    # Define pretrained tokenizer and model
-    tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
-    model = AutoModelForSequenceClassification.from_pretrained('teoh0821/cb_detection', num_labels=2)
+if selected == "Application": 
+    ####################################
+    # Call model from Hugging Face Hub #
+    ####################################
+    @st.cache(allow_output_mutation=True)
 
-    return tokenizer, model
+    def get_cb_model():
+
+        # Define pretrained tokenizer and model
+        tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
+        model = AutoModelForSequenceClassification.from_pretrained('teoh0821/cb_detection', num_labels=2)
+
+        return tokenizer, model
 
 
-########################
-# Create torch dataset #
-########################
-class Dataset(torch.utils.data.Dataset):
-    def __init__(self, encodings, labels=None):
-        self.encodings = encodings
-        self.labels = labels
+    ########################
+    # Create torch dataset #
+    ########################
+    class Dataset(torch.utils.data.Dataset):
+        def __init__(self, encodings, labels=None):
+            self.encodings = encodings
+            self.labels = labels
 
-    def __getitem__(self, idx):
-        item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
-        if self.labels:
-            item["labels"] = torch.tensor(self.labels[idx])
-        return item
+        def __getitem__(self, idx):
+            item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
+            if self.labels:
+                item["labels"] = torch.tensor(self.labels[idx])
+            return item
 
-    def __len__(self):
-        return len(self.encodings["input_ids"])
+        def __len__(self):
+            return len(self.encodings["input_ids"])
 
-##################################################################
-# Note: [Part 3] Run the application for cyberbullying detection #
-##################################################################
-if selected == "Application":
-
+    ##################################################################
+    # Note: [Part 3] Run the application for cyberbullying detection #
+    ##################################################################
     tokenizer, model = get_cb_model()
 
     input_text = st.text_area('Enter Text to Analyze')
@@ -360,7 +359,6 @@ if selected == "Application":
     #######################
     # Streamlit Interface #
     #######################
-
     if input_text and button:
 
         # Read data 
