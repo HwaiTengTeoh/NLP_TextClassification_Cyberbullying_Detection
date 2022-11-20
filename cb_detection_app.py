@@ -31,6 +31,7 @@ from transformers import Trainer
 
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
+from PIL import Image
 
 import streamlit as st
 from streamlit_option_menu import option_menu
@@ -55,6 +56,10 @@ if selected =="Home":
                 This application was developed to put an end to cyberbullying posts. 
                 
                 """)
+    
+
+    home_image = Image.open('Picture1.png')
+    st.image(home_image, caption="")
 
 if selected == "Other Resources":
     st.markdown("""
