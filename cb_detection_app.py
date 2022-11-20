@@ -26,6 +26,13 @@ import language_tool_python
 # from pycontractions.contractions import Contractions
 import contractions
 
+import torch
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import Trainer
+
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "true"
+
 import streamlit as st
 from streamlit_option_menu import option_menu
 
@@ -50,10 +57,7 @@ if selected == "Application":
     ################################################################
     # Note: [Part 1] This part is to execute preprocess input text #
     ################################################################
-   
-
-    
-    
+  
     # Functions
     def get_term_list(path):
         '''
@@ -312,15 +316,7 @@ if selected == "Application":
     ###################################################################################
     #################################################
     # Streamlit Cyberbullying Detection Application #
-    #################################################
-    import pandas as pd
-    import torch
-    from transformers import AutoTokenizer, AutoModelForSequenceClassification
-    from transformers import Trainer
-
-    import os
-    os.environ["TOKENIZERS_PARALLELISM"] = "true"
-    
+    #################################################    
     ####################################
     # Call model from Hugging Face Hub #
     ####################################
