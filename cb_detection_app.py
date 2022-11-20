@@ -3,7 +3,6 @@
 # Import Libraries/ Modules #
 #############################
 import warnings
-import time
 warnings.filterwarnings("ignore")
 
 # Data Manipulation
@@ -399,7 +398,6 @@ if selected == "Application":
                                                 lemmatise=True)
 
         with st.spinner("Almost there.. Analyzing your input text.."):
-            time.sleep(0.5)
             input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
 
             # Create torch dataset
