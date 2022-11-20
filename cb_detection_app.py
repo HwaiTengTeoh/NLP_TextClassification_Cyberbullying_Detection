@@ -46,17 +46,16 @@ selected = option_menu(
 if selected =="Home":
     st.title("home page is selected")
 if selected =="Contact":
-    st.title("contact is selected")
+    st.title("Contacts")
     st.markdown("""
-                ##### Teoh Hwai Teng
-                ##### ***Postgraduate Master of Data Science Student***
+                #### Teoh Hwai Teng
+                ##### ***Postgraduate, Master of Data Science Student***
                 ##### ***Faculty of Computer Science and Information Technology, University of Malaya***
                 Email: teoh0821@gmail.com
                 Github: https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
                 
                 ---
-                ##### Dr. Kasturi Dewi
-                ##### ***Associate Prof Dr. Kasturi Dewi A/P Varathan
+                #### Associate Prof Dr. Kasturi Dewi A/P Varathan
                 ##### ***Department of Information System, Faculty of Computer Science and Information Technology, University of Malaya***
                 Email: kasturi@um.edu.my
          
