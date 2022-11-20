@@ -399,24 +399,23 @@ if selected == "Application":
                                                 lemmatise=True)
 
         with st.spinner("Almost there.. Analyzing your input text.."):
-            time.sleep(1)
+            time.sleep(0.5)
+            input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
 
-        input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
+            # Create torch dataset
+            input_text_dataset = Dataset(input_text_tokenized)
 
-        # Create torch dataset
-        input_text_dataset = Dataset(input_text_tokenized)
+            # Define test trainer
+            pred_trainer = Trainer(model)
 
-        # Define test trainer
-        pred_trainer = Trainer(model)
+            # Make prediction
+            raw_pred, _, _ = pred_trainer.predict(input_text_dataset)
 
-        # Make prediction
-        raw_pred, _, _ = pred_trainer.predict(input_text_dataset)
+            # Preprocess raw predictions
+            text_pred = np.where(np.argmax(raw_pred, axis=1)==1,"Cyberbullying Post","Non-cyberbullying Post")
 
-        # Preprocess raw predictions
-        text_pred = np.where(np.argmax(raw_pred, axis=1)==1,"Cyberbullying Post","Non-cyberbullying Post")
-
-        if text_pred.tolist()[0] == "Non-cyberbullying Post":
-            st.success("No worry! Our model says this is a Non-cyberbullying Post!", icon="✅")
-        elif text_pred.tolist()[0] == "Cyberbullying Post":
-            st.warning("Warning!! Our model says this is a Cyberbullying Post!", icon="⚠️")
-        #st.write("Our model says this is a ", text_pred.tolist()[0])
+            if text_pred.tolist()[0] == "Non-cyberbullying Post":
+                st.success("No worry! Our model says this is a Non-cyberbullying Post!", icon="✅")
+            elif text_pred.tolist()[0] == "Cyberbullying Post":
+                st.warning("Warning!! Our model says this is a Cyberbullying Post!", icon="⚠️")
+            #st.write("Our model says this is a ", text_pred.tolist()[0])
