@@ -350,12 +350,13 @@ class Dataset(torch.utils.data.Dataset):
         return len(self.encodings["input_ids"])
 
  
-if selected == "Application":   
-    ##################################################################
-    # Note: [Part 3] Run the application for cyberbullying detection #
-    ##################################################################
-    tokenizer, model = get_cb_model()
 
+##################################################################
+# Note: [Part 3] Run the application for cyberbullying detection #
+##################################################################
+tokenizer, model = get_cb_model()
+
+if selected == "Application":   
     input_text = st.text_area('Enter Text to Analyze')
     button = st.button("Analyze")
 
