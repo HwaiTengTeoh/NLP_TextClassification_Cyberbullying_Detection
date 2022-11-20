@@ -16,6 +16,7 @@ nltk
 emot
 fuzzywuzzy
 streamlit
+streamlit-option-menu
 pandas
 torch
 transformers
