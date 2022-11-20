@@ -71,7 +71,6 @@ if selected =="Home":
 if selected == "Resources":
     st.title("Resources")
     st.markdown("""
-
                 ---
                 ***You may check out the source codes. Here's the link to the Github Repository:***
                 > https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection
@@ -84,6 +83,7 @@ if selected == "Resources":
 if selected =="Contacts":
     st.title("Contacts")
     st.markdown("""
+                ---
                 #### Teoh Hwai Teng
                 ##### ***Postgraduate, Master of Data Science, Faculty of Computer Science and Information Technology, University of Malaya***
                 
@@ -97,6 +97,7 @@ if selected =="Contacts":
                 
                 > Email: kasturi@um.edu.my
          
+                ---
                 """)
 
     
