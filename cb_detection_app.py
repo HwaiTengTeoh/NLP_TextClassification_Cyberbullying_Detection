@@ -34,7 +34,7 @@ tool = language_tool_python.LanguageTool('en-US')
 # cont = Contractions(api_key="glove-twitter-100")
 
 # Functions
-@st.cache(allow_output_mutation=True)
+
 def get_term_list(path):
     '''
     Function to import term list file
