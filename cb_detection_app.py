@@ -347,7 +347,7 @@ input_data = {
 
 bully_data = pd.DataFrame(input_data)
 
-with st.spinner("Preprocessing input text.."):
+with st.spinner("Hold on.. Preprocessing the input text.."):
     cleaned_input_text = text_preprocessing_pipeline(
                                         df=bully_data,
                                         remove_url=True,
@@ -376,18 +376,19 @@ with st.spinner("Preprocessing input text.."):
 #######################
 
 if input_text and button:
-    input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
-    
-    # Create torch dataset
-    input_text_dataset = Dataset(input_text_tokenized)
-    
-    # Define test trainer
-    pred_trainer = Trainer(model)
-    
-    # Make prediction
-    raw_pred, _, _ = pred_trainer.predict(input_text_dataset)
+    with st.spinner("Almost there.. Analyzing your input text.."):
+        input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
 
-    # Preprocess raw predictions
-    text_pred = np.where(np.argmax(raw_pred, axis=1)==1,"Cyberbullying Post","Non-cyberbullying Post")
-    
-    st.write("Our model says this is a ", text_pred.tolist()[0])
+        # Create torch dataset
+        input_text_dataset = Dataset(input_text_tokenized)
+
+        # Define test trainer
+        pred_trainer = Trainer(model)
+
+        # Make prediction
+        raw_pred, _, _ = pred_trainer.predict(input_text_dataset)
+
+        # Preprocess raw predictions
+        text_pred = np.where(np.argmax(raw_pred, axis=1)==1,"Cyberbullying Post","Non-cyberbullying Post")
+
+        st.write("Our model says this is a ", text_pred.tolist()[0])
