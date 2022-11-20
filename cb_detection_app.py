@@ -5,6 +5,23 @@
 # Import Libraries/ Modules #
 #############################
 
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+selected = option_menu(
+    menu_title=None,
+    options = ["Home", "Application", "Contact"],
+    icons = ["house","card-text","envelope"],
+    default_index=0,
+    orientation="horizontal",
+    )
+
+if selected =="Home":
+    st.title("home page is selected")
+if selected =="Contact":
+    st.title("contact is selected")
+    
+
 import warnings
 import time
 warnings.filterwarnings("ignore")
@@ -301,19 +318,6 @@ import pandas as pd
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import Trainer
-
-selected = option_menu(
-    menu_title=None,
-    options = ["Home", "Application", "Contact"],
-    icons = ["house","card-text","envelope"],
-    default_index=0,
-    orientation="horizontal",
-    )
-
-if selected =="Home":
-    st.title("home page is selected")
-if selected =="Contact":
-    st.title("contact is selected")
     
 if selected == "Application": 
     ####################################
