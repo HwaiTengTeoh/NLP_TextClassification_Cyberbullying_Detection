@@ -301,7 +301,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import Trainer
 
-st.spinner("Setting up..")
+
 ####################################
 # Call model from Hugging Face Hub #
 ####################################
