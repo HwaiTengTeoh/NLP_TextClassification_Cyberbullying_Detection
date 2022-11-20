@@ -372,7 +372,7 @@ with st.spinner("Hold on.. Preprocessing the input text.."):
                                         lemmatise=True)
 
 with st.spinner("Almost there.. Analyzing your input text.."):
-    time.sleep(2)
+    time.sleep(1)
 
 #######################
 # Streamlit Interface #
