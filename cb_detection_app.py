@@ -300,8 +300,6 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import Trainer
 
-st.info("Loading..")
-
 ####################################
 # Call model from Hugging Face Hub #
 ####################################
@@ -349,27 +347,28 @@ input_data = {
 
 bully_data = pd.DataFrame(input_data)
 
-cleaned_input_text = text_preprocessing_pipeline(
-                                    df=bully_data,
-                                    remove_url=True,
-                                    remove_email=True,
-                                    remove_user_mention=True,
-                                    remove_html=False,
-                                    remove_space_single_char=True,
-                                    normalize_elongated_char=True,
-                                    normalize_emoji=True,
-                                    normalize_emoticon=True,
-                                    normalize_accented=True,
-                                    lower_case=True,
-                                    normalize_slang=True,
-                                    normalize_badterm=True,
-                                    spelling_check=True,
-                                    normalize_contraction=True,
-                                    remove_numeric=True,
-                                    remove_stopword=False, # Keep stopwords
-                                    keep_pronoun=False,  # Keep pronoun
-                                    remove_punctuation=True,
-                                    lemmatise=True)
+with st.spinner("Preprocessing input text.."):
+    cleaned_input_text = text_preprocessing_pipeline(
+                                        df=bully_data,
+                                        remove_url=True,
+                                        remove_email=True,
+                                        remove_user_mention=True,
+                                        remove_html=False,
+                                        remove_space_single_char=True,
+                                        normalize_elongated_char=True,
+                                        normalize_emoji=True,
+                                        normalize_emoticon=True,
+                                        normalize_accented=True,
+                                        lower_case=True,
+                                        normalize_slang=True,
+                                        normalize_badterm=True,
+                                        spelling_check=True,
+                                        normalize_contraction=True,
+                                        remove_numeric=True,
+                                        remove_stopword=False, # Keep stopwords
+                                        keep_pronoun=False,  # Keep pronoun
+                                        remove_punctuation=True,
+                                        lemmatise=True)
 
 
 #######################
