@@ -45,7 +45,7 @@ selected = option_menu(
     )
 
 if selected =="Home":
-    st.title("Welcome to the Cyberbullying Detection Application!")
+    st.title("Welcome to the Cyberbullying Checker Application!")
     st.markdown("""
                 Cyberbullying sabotages the environment of Online Social Media. 
                 
