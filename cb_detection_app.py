@@ -48,8 +48,11 @@ if selected == "Application":
     ################################################################
    
     # Instantiate
+    @st.cache()
     tool = language_tool_python.LanguageTool('en-US')
     # cont = Contractions(api_key="glove-twitter-100")
+    
+    
     # Functions
     def get_term_list(path):
         '''
