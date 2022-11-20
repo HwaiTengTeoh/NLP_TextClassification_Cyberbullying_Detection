@@ -341,38 +341,6 @@ tokenizer, model = get_cb_model()
 input_text = st.text_area('Enter Text to Analyze')
 button = st.button("Analyze")
 
-# Read data 
-input_data = {
-                "text" : [input_text] 
-            }
-
-bully_data = pd.DataFrame(input_data)
-
-with st.spinner("Hold on.. Preprocessing the input text.."):
-    cleaned_input_text = text_preprocessing_pipeline(
-                                        df=bully_data,
-                                        remove_url=True,
-                                        remove_email=True,
-                                        remove_user_mention=True,
-                                        remove_html=False,
-                                        remove_space_single_char=True,
-                                        normalize_elongated_char=True,
-                                        normalize_emoji=True,
-                                        normalize_emoticon=True,
-                                        normalize_accented=True,
-                                        lower_case=True,
-                                        normalize_slang=True,
-                                        normalize_badterm=True,
-                                        spelling_check=True,
-                                        normalize_contraction=True,
-                                        remove_numeric=True,
-                                        remove_stopword=False, # Keep stopwords
-                                        keep_pronoun=False,  # Keep pronoun
-                                        remove_punctuation=True,
-                                        lemmatise=True)
-
-with st.spinner("Almost there.. Analyzing your input text.."):
-    time.sleep(1)
 
 #######################
 # Streamlit Interface #
@@ -380,6 +348,39 @@ with st.spinner("Almost there.. Analyzing your input text.."):
 
 if input_text and button:
     
+    # Read data 
+    input_data = {
+                    "text" : [input_text] 
+                }
+
+    bully_data = pd.DataFrame(input_data)
+
+    with st.spinner("Hold on.. Preprocessing the input text.."):
+        cleaned_input_text = text_preprocessing_pipeline(
+                                            df=bully_data,
+                                            remove_url=True,
+                                            remove_email=True,
+                                            remove_user_mention=True,
+                                            remove_html=False,
+                                            remove_space_single_char=True,
+                                            normalize_elongated_char=True,
+                                            normalize_emoji=True,
+                                            normalize_emoticon=True,
+                                            normalize_accented=True,
+                                            lower_case=True,
+                                            normalize_slang=True,
+                                            normalize_badterm=True,
+                                            spelling_check=True,
+                                            normalize_contraction=True,
+                                            remove_numeric=True,
+                                            remove_stopword=False, # Keep stopwords
+                                            keep_pronoun=False,  # Keep pronoun
+                                            remove_punctuation=True,
+                                            lemmatise=True)
+
+    with st.spinner("Almost there.. Analyzing your input text.."):
+        time.sleep(1)
+
     input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
 
     # Create torch dataset
