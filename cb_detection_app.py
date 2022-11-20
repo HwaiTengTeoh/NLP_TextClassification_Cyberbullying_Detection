@@ -394,5 +394,9 @@ if input_text and button:
 
     # Preprocess raw predictions
     text_pred = np.where(np.argmax(raw_pred, axis=1)==1,"Cyberbullying Post","Non-cyberbullying Post")
-
-    st.write("Our model says this is a ", text_pred.tolist()[0])
+    
+    if text_pred.tolist()[0] == "Non-cyberbullying Post":
+        st.success("No worry! Our model says this is a Non-cyberbullying Post!", icon="✅")
+    elif text_pred.tolist()[0] == "Cyberbullying Post":
+        st.warning("Warning!! Our model says this is a Non-cyberbullying Post!", icon="⚠️")
+    #st.write("Our model says this is a ", text_pred.tolist()[0])
