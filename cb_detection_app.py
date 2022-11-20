@@ -49,15 +49,19 @@ if selected =="Home":
 if selected =="Contact":
     st.title("contact is selected")
     
-# Instantiate
-tool = language_tool_python.LanguageTool('en-US')
-# cont = Contractions(api_key="glove-twitter-100")    
+  
 
 if selected == "Application":   
     ################################################################
     # Note: [Part 1] This part is to execute preprocess input text #
     ################################################################
-  
+    
+    # Instantiate
+    @st.cache
+    tool = language_tool_python.LanguageTool('en-US')
+    # cont = Contractions(api_key="glove-twitter-100")  
+    
+    
     # Functions
     def get_term_list(path):
         '''
