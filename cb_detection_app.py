@@ -47,6 +47,10 @@ if selected =="Home":
     st.title("home page is selected")
 if selected =="Contact":
     st.title("contact is selected")
+    st.markdown("# Contacts")
+    st.markdown("### Teoh Hwai Teng")
+    st.markdown("#### ***Postgraduate Master of Data Science Student, University of Malaya***")
+    
     
   
 
