@@ -404,7 +404,10 @@ if selected == "Application":
     
     app_image = Image.open('Picture1.png')
     st.image(app_image, caption="")
-
+    
+    st.markdown("""
+                Please wait for few seconds, the application is loading ⏳
+        """)
 
     # Instantiate
     tool = language_tool_python.LanguageTool('en-US')
