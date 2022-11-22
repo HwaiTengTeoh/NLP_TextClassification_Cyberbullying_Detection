@@ -406,7 +406,7 @@ if selected == "Application":
     st.image(app_image, caption="")
     
     st.markdown("""
-                Please wait for few seconds, the application is loading ⏳
+                Please wait for few seconds, the application will be loaded soon ⏳
         """)
 
     # Instantiate
