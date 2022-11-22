@@ -400,14 +400,11 @@ if selected == "Application":
                 #### It’s simple to kick start!
                 ##### Just input your text or paste any post that you spotted online. 
                 ##### Our model will analyze and check the text or post for you in ***one click***. 
+                ##### Please wait for few seconds, the application will be loaded soon ⏳
         """)
     
     app_image = Image.open('Picture1.png')
     st.image(app_image, caption="")
-    
-    st.markdown("""
-                Please wait for few seconds, the application will be loaded soon ⏳
-        """)
 
     # Instantiate
     tool = language_tool_python.LanguageTool('en-US')
