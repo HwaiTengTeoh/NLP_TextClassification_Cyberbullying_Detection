@@ -477,3 +477,12 @@ if selected == "Application":
             elif text_pred.tolist()[0] == "Cyberbullying Post":
                 st.warning("Warning!! Our model says this is a Cyberbullying Post!", icon="⚠️")
             #st.write("Our model says this is a ", text_pred.tolist()[0])
+        
+        
+     st.markdown("""
+        ---
+        ***Disclaimer:***
+        > *The information provided on this application does not and is not intended to constitute legal advice; instead. The authors are not liable or responsible for any errors or omissions in the content of this site. All information, content, materials, and outcome available on this application are just a prototype provided for general informational purposes only. The information contained in this application is provided on an "as is" basis with no guarantees of completeness, accuracy, usefulness, or timeliness.*
+
+        ---
+        """)
