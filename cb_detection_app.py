@@ -481,8 +481,8 @@ if selected == "Application":
         
     st.markdown("""
             ---
-            ***Credits:***
-            > *The image was taken from the Slidesgo presentation template from [here](https://slidesgo.com/theme/international-day-against-bullying-at-school-including-cyberbullying#search-cyberbullying&position-1&results-10&rs=search), with the icons created by Falticons and infographics and images by Freepik*
+            ***Disclaimer:***
+            > *The information provided on this application does not and is not intended to constitute legal advice; instead. The authors are not liable or responsible for any errors or omissions in the content of this site. All information, content, materials, and outcome available on this application are just a prototype provided for general informational purposes only. The information contained in this application is provided on an "as is" basis with no guarantees of completeness, accuracy, usefulness, or timeliness.*
            
             ---
             """)
