@@ -21,3 +21,4 @@ pandas
 torch
 transformers
 Pillow
+accelerate
