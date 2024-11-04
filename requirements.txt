@@ -4,7 +4,7 @@ textblob
 regex
 pip
 git+https://github.com/HwaiTengTeoh/preprocess_text.git
-language-tool-python
+language-tool-python==2.8.1
 contractions
 pyemd
 spacy==3.5.4
