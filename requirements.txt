@@ -19,7 +19,7 @@ streamlit==1.16.0
 streamlit-option-menu
 torch
 thinc
-transformers
+transformers==4.44.0
 accelerate
 Pillow
 altair==4.0
